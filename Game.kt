@@ -1,11 +1,24 @@
+import java.lang.Math.pow
+import java.lang.Math.random
+
 fun main() {
     val name = "Madrigal"
-    var healthPoints = 80
+    var healthPoints = 10
     var isBlessed = true
     val isImmortal = false
+    val karma = (pow(random(),(110-healthPoints)/100.0)*20).toInt()
 
     val auraVisible = isBlessed && healthPoints > 50 || isImmortal
-    val auraColor = if (auraVisible) "綠色光環" else "空無一物"
+    val auraColor = when (karma) {
+        in (0..5) -> "紅色"
+        in (6..10) -> "橘色"
+        in (11..15) -> "紫色"
+        in (16..20) -> "綠色"
+            else ->
+                "沒有光環"
+
+
+    }
 
     val healthStatus = when (healthPoints) {
         100 -> "健康狀態極佳"
