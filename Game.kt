@@ -4,7 +4,8 @@ fun main() {
     var isBlessed = true
     val isImmortal = false
 
-    if (isBlessed && healthPoints > 50 || isImmortal){
+    val auraVisible = isBlessed && healthPoints > 50 || isImmortal
+    if (auraVisible){
         println("光環")
     } else {
         println("空無一物")
