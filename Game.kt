@@ -3,7 +3,7 @@ import java.lang.Math.random
 
 fun main() {
     val name = "Madrigal"
-    var healthPoints = 10
+    var healthPoints = 100
     var isBlessed = true
     val isImmortal = false
     val karma = (pow(random(),(110-healthPoints)/100.0)*20).toInt()
@@ -16,8 +16,6 @@ fun main() {
         in (16..20) -> "綠色"
             else ->
                 "沒有光環"
-
-
     }
 
     val healthStatus = when (healthPoints) {
@@ -31,7 +29,9 @@ fun main() {
         in 15..74 -> "嚴重受傷"
         else -> "情況不妙"
     }
-    println("光環顏色 : $auraColor"+"     走運嗎？${if (isBlessed) "是的" else "否"}")
+    val statusFormatString = "(健康指數. $healthPoints)(光環: $auraColor) (運勢. ${if (isBlessed) "走運" else "很背"}) -> $name $healthStatus)"
+    println(statusFormatString)
+    //println("光環顏色 : $auraColor"+"     走運嗎？${if (isBlessed) "是的" else "否"}")
     // Player status
     println("$name $healthStatus")
     }
