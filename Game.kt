@@ -6,7 +6,6 @@ fun main() {
 
     val auraVisible = isBlessed && healthPoints > 50 || isImmortal
     val auraColor = if (auraVisible) "綠色光環" else "空無一物"
-    println(auraColor)
 
     val healthStatus = when (healthPoints) {
         100 -> "健康狀態極佳"
@@ -19,6 +18,7 @@ fun main() {
         in 15..74 -> "嚴重受傷"
         else -> "情況不妙"
     }
-        // Player status
-        println("$name" + "$healthStatus")
+    println("光環顏色 : $auraColor"+"     走運嗎？${if (isBlessed) "是的" else "否"}")
+    // Player status
+    println("$name $healthStatus")
     }
