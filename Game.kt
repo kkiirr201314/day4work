@@ -5,11 +5,9 @@ fun main() {
     val isImmortal = false
 
     val auraVisible = isBlessed && healthPoints > 50 || isImmortal
-    if (auraVisible){
-        println("光環")
-    } else {
-        println("空無一物")
-    }
+    val auraColor = if (auraVisible) "綠色光環" else "空無一物"
+    println(auraColor)
+
     val healthStatus = if (healthPoints == 100) {"健康狀態極佳"}
     else if(healthPoints >= 90) {"有一些小擦傷"}
     else if(healthPoints >= 75){
